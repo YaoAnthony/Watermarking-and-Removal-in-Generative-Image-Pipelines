@@ -10,19 +10,20 @@ const methodologyData: ProcessPhase[] = [
     subtitle: "Discovery & Snowballing",
     icon: Layers,
     items: [
-      { label: "Core Identification", value: "8 Papers", description: "AI-assisted Discovery (GPT)" },
-      { label: "Snowballing Expansion", value: "23 Papers", description: "Citation chaining (Intro/Related Works)" }
+      { label: "Core Identification", value: "13 Papers", description: "AI-assisted Discovery (GPT)" },
+      { label: "Snowballing Expansion", value: "32 Papers", description: "Citation chaining (Intro/Related Works)" }
     ],
     description: "Goal: Establish the foundational knowledge graph."
   },
   {
     id: 2,
     title: "Systematic Search",
-    subtitle: "Google Scholar (>2017)",
+    subtitle: "Google Scholar,NeurLPS, ICML, ICLR, ICCV(>2017)",
     icon: Database,
     items: [
-      { label: "Model-tuned Candidates", value: "72", highlight: true },
-      { label: "Tuning-free Candidates", value: "548", highlight: true, description: "High volume noise" }
+      { label: "Deep watermarking", value: "172", highlight: true },
+      { label: "Model-tuned", value: "52", highlight: true },
+      { label: "Tuning-free", value: "553", highlight: true },
     ],
     description: "Filters: Keyword 'Image Watermarking'"
   },
@@ -32,8 +33,9 @@ const methodologyData: ProcessPhase[] = [
     subtitle: "Title, Abstract, Limit Check",
     icon: Filter,
     items: [
-      { label: "Model-tuned Selection", value: "72", subValue: "38", highlight: true },
-      { label: "Tuning-free Selection", value: "548", subValue: "150", highlight: true }
+      { label: "Deep watermarking", value: "172", subValue: "21", highlight: true },
+      { label: "Model-tuned", value: "52", subValue: "18", highlight: true },
+      { label: "Tuning-free", value: "553", subValue: "12", highlight: true },
     ],
     description: "Deep filtering applied to remove noise."
   },
@@ -43,7 +45,7 @@ const methodologyData: ProcessPhase[] = [
     subtitle: "The Final Selection",
     icon: CheckCircle,
     items: [
-      { label: "Deep Review Selected", value: "~58 Papers", highlight: true }
+      { label: "Deep Review Selected", value: "~51 Papers", highlight: true }
     ],
     description: "Selected for detailed analysis & presentation."
   }
@@ -51,17 +53,9 @@ const methodologyData: ProcessPhase[] = [
 
 export default function Methodology() {
   return (
-    <div className=" bg-white text-slate-900 flex flex-col relative overflow-hidden selection:bg-blue-100">
-      
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-50/50 rounded-bl-[100px] -z-10 blur-3xl" />
-      
-
-      {/* Main Content Area */}
-      <main className="flex-1 px-12 md:px-20 pb-32 overflow-y-auto">
-        
+      <main className="relative">
         {/* Process Flow Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 lg:gap-12 relative">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '3rem', position: 'relative' }}>
           {methodologyData.map((phase, index) => (
             <PhaseCard 
               key={phase.id} 
@@ -70,20 +64,6 @@ export default function Methodology() {
             />
           ))}
         </div>
-
-        {/* Legend/Note at bottom of main content */}
-        <div className="mt-16 flex items-center justify-center space-x-8 opacity-60">
-           <div className="flex items-center gap-2">
-             <div className="w-3 h-3 rounded-full bg-blue-100 border border-blue-200"></div>
-             <span className="text-sm font-medium text-slate-500">Filtered Set</span>
-           </div>
-           <div className="flex items-center gap-2">
-             <div className="w-3 h-3 rounded-full bg-slate-50 border border-slate-200"></div>
-             <span className="text-sm font-medium text-slate-500">Raw Data</span>
-           </div>
-        </div>
-
       </main>
-    </div>
   );
 }

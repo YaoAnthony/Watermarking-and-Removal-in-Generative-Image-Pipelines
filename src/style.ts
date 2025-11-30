@@ -48,9 +48,9 @@ const colors = {
 };
 
 const styles = {
-    paddingX: "3xl:px-72 2xl:px-64 xl:px-28 lg:px-16 md:px-10 xs:px-5",
-  
-};
+    slideContainer: "w-full h-full flex flex-col items-center justify-center bg-white dark:bg-zinc-900 text-gray-900 dark:text-gray-100 transition-colors duration-300",
+    slideContent: "max-w-[110rem] w-full flex flex-col h-[85%]",
+}
 const mainPageStyle = {
     primaryColor: 'text-white-text-primary dark:text-dark-text-primary',
     secondaryColor: `text-white-text-secondary dark:text-gray-500 `,

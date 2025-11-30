@@ -16,7 +16,7 @@ export default function Typewriter({
     useEffect(() => {
         const timeout = setTimeout(() => {
           const animation = animate(0, text.length, {
-            duration: 3,
+            duration: 2,
             ease: "linear",
             onUpdate: (latest) => {
               children.set(text.slice(0, Math.ceil(latest)));

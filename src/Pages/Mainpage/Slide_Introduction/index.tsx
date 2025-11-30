@@ -5,7 +5,8 @@ import { Binary, Waves, Check, AlertTriangle } from "lucide-react";
 
 import LSBModal from "./LSBModal";
 import DWTModal from "./DWTModal";
-import DeepWatermarkingModal from "./DeepWatermarkingModal";
+import DeepWatermarkingModal from "../Slide_Deep_watermarking/components/DeepWatermarkingModal";
+import { styles } from "../../../style";
 
 const Slide3withOutHOC: React.FC = () => {
     const [lsbModalOpen, setLsbModalOpen] = useState(false);
@@ -22,10 +23,7 @@ const Slide3withOutHOC: React.FC = () => {
         setDwtModalOpen(true);
     };
 
-    const openDeepWatermarkingModal = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setDeepWatermarkingModalOpen(true);
-    };
+
 
     const sectionVariants = {
         hidden: { opacity: 0, x: -20 },
@@ -37,13 +35,13 @@ const Slide3withOutHOC: React.FC = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-start bg-white dark:bg-zinc-900 text-gray-900 dark:text-gray-100 overflow-hidden relative transition-colors duration-300">
+        <div className={styles.slideContainer}>
             
             <LSBModal isOpen={lsbModalOpen} onClose={() => setLsbModalOpen(false)} />
             <DWTModal isOpen={dwtModalOpen} onClose={() => setDwtModalOpen(false)} />
             <DeepWatermarkingModal isOpen={deepWatermarkingModalOpen} onClose={() => setDeepWatermarkingModalOpen(false)} />
 
-            <div className="max-w-5xl w-full px-12 py-12 flex flex-col h-full">
+            <div className={styles.slideContent}>
 
                 {/* Header */}
                 <motion.div 
@@ -102,45 +100,9 @@ const Slide3withOutHOC: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
-
-                    {/* 2. Deep Learning Era */}
+                    {/* 2. Current Challenges */}
                     <motion.div 
                         custom={2}
-                        variants={sectionVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="relative"
-                    >
-                        {/* Timeline Node */}
-                        <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white dark:bg-zinc-900 border-4 border-blue-500 dark:border-blue-500" />
-
-                        <div className="space-y-3">
-                            <div className="flex items-baseline gap-3">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Deep Learning Era</h3>
-                                <span className="text-sm font-mono text-blue-600 dark:text-blue-400">2015~</span>
-                            </div>
-                            <button 
-                                onClick={openDeepWatermarkingModal}
-                                className="group flex items-center gap-2 px-3 py-1.5 rounded border border-gray-300 dark:border-zinc-600 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all bg-transparent"
-                            >
-                                <Waves size={16} className="text-gray-400 group-hover:text-purple-500 dark:group-hover:text-purple-400" />
-                                <span className="font-medium">Deep Learning</span>
-                            </button>
-                            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-1">
-                                <li><span className="font-semibold">End-to-End:</span> Jointly training Encoder/Decoder (e.g., HiDDeN).</li>
-                                <li><span className="font-semibold">GAN-based:</span> Enhancing visual quality via adversarial loss.(e.g., ARWGAN etc)</li>
-                            </ul>
-
-                            <div className="flex items-start gap-2 text-gray-600 dark:text-gray-400 text-base mt-2">
-                                <Check size={18} className="mt-1 shrink-0 text-emerald-600 dark:text-emerald-500" />
-                                <p><span className="font-semibold text-emerald-700 dark:text-emerald-500">Solved:</span> Robustness against signal processing (JPEG, Crop, Noise).</p>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* 3. Current Challenges */}
-                    <motion.div 
-                        custom={3}
                         variants={sectionVariants}
                         initial="hidden"
                         animate="visible"
@@ -157,10 +119,64 @@ const Slide3withOutHOC: React.FC = () => {
 
                             <div className="p-4 bg-gray-50 dark:bg-zinc-800/50 border-l-4 border-red-500 rounded-r-lg">
                                 <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                                    Existing DL methods cannot survive <span className="font-bold text-red-700 dark:text-red-400">Generative Attacks</span>.
+                                    Traditional methods cannot survive <span className="font-bold text-red-700 dark:text-red-400">many Attacks</span>.
                                 </p>
                                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">
-                                    (e.g., Diffusion Models, Stable Diffusion Inpainting)
+                                    (e.g., JPEG, Crop, Noise Attacks)
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* 3. Deep Learning Era */}
+                    <motion.div 
+                        custom={3}
+                        variants={sectionVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="relative"
+                    >
+                        {/* Timeline Node */}
+                        <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white dark:bg-zinc-900 border-4 border-blue-500 dark:border-blue-500" />
+
+                        <div className="space-y-3">
+                            <div className="flex items-baseline gap-3">
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Deep Learning Era</h3>
+                                <span className="text-sm font-mono text-blue-600 dark:text-blue-400">2015~</span>
+                            </div>
+                            
+                            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-1">
+                                <li><span className="font-semibold">End-to-End:</span> Jointly training Encoder/Decoder (e.g., HiDDeN).</li>
+                                <li><span className="font-semibold">GAN-based:</span> Enhancing visual quality via adversarial loss.(e.g., ARWGAN etc)</li>
+                            </ul>
+
+                            <div className="flex items-start gap-2 text-gray-600 dark:text-gray-400 text-base mt-2">
+                                <Check size={18} className="mt-1 shrink-0 text-emerald-600 dark:text-emerald-500" />
+                                <p><span className="font-semibold text-emerald-700 dark:text-emerald-500">Solved:</span> Robustness against signal processing (JPEG, Crop, Noise).</p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* 4. New Challenges */}
+                    <motion.div 
+                        custom={4}
+                        variants={sectionVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="relative"
+                    >
+                        {/* Timeline Node */}
+                        <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white dark:bg-zinc-900 border-4 border-red-500 dark:border-red-500" />
+
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-3">
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Current Challenges</h3>
+                                <span className="px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-red-600 border border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400 rounded">2017</span>
+                            </div>
+
+                            <div className="p-4 bg-gray-50 dark:bg-zinc-800/50 border-l-4 border-red-500 rounded-r-lg">
+                                <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                                    <span className="font-bold text-red-700 dark:text-red-400">Diffusion Models</span>.
                                 </p>
                             </div>
                         </div>

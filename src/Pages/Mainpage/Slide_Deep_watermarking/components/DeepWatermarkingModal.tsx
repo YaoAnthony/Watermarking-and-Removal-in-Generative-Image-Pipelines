@@ -1,5 +1,5 @@
-import Modal from "../../../Component/Modal";
-import DeepWatermarking from "./components/DeepWatermarking";
+import Modal from "../../../../Component/Modal";
+import DeepWatermarking from "./DeepWatermarking";
 
 
 interface DeepWatermarkingModalProps {

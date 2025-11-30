@@ -2,6 +2,7 @@ import React from "react";
 import { withSlide } from "../../../HOC/withSlide";
 import { motion } from "framer-motion";
 import { Split, Scale, ShieldAlert } from "lucide-react";
+import { styles } from "../../../style";
 
 interface RQCardProps {
     number: string;
@@ -16,7 +17,7 @@ const ResearchQuestionCard: React.FC<RQCardProps> = ({ number, title, question, 
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ delay, duration: 0.6, ease: "easeOut" }}
-    className="flex gap-8 p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-blue-200 dark:hover:border-blue-800 transition-colors group"
+    className="flex gap-8 p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-blue-200 shadow-md dark:hover:border-blue-800 transition-colors group"
   >
     <div className="shrink-0">
         <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-zinc-800 flex items-center justify-center text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
@@ -32,7 +33,7 @@ const ResearchQuestionCard: React.FC<RQCardProps> = ({ number, title, question, 
                 {title}
             </h3>
         </div>
-        <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+        <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
             {question}
         </p>
     </div>
@@ -41,8 +42,8 @@ const ResearchQuestionCard: React.FC<RQCardProps> = ({ number, title, question, 
 
 const Slide5withOutHOC: React.FC = () => {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-white dark:bg-zinc-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-            <div className="max-w-6xl w-full px-8 flex flex-col h-[85%]">
+        <div className={styles.slideContainer}>
+            <div className={styles.slideContent}>
 
                 {/* Header */}
                 <div className="mb-12 shrink-0">
@@ -59,18 +60,18 @@ const Slide5withOutHOC: React.FC = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 flex flex-col justify-center gap-6">
+                <div className="flex-1 flex flex-col justify-center gap-12">
                     <ResearchQuestionCard 
                         number="1"
                         title="Taxonomy"
-                        question="How are current watermarking techniques for Diffusion Models classified? (e.g., Model-Tuned vs. Tuning-Free)"
+                        question="How are current watermarking techniques for Diffusion Models classified? "
                         icon={Split}
                         delay={0.2}
                     />
                     <ResearchQuestionCard 
                         number="2"
                         title="Performance Trade-offs"
-                        question="How do Model-tuned and Tuning-free methods balance Imperceptibility, Robustness, and Efficiency?"
+                        question="How do these techniques balance Imperceptibility, Robustness, and Efficiency?"
                         icon={Scale}
                         delay={0.4}
                     />

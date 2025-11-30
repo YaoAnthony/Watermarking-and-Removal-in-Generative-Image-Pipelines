@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
       <Provider store={store}>
         {/* 等待 redux-persist rehydrate 完成后再渲染 UI */}
         <PersistGate persistor={persistor}>
-          <BrowserRouter>
+          <BrowserRouter basename="/Watermarking-and-Removal-in-Generative-Image-Pipelines/">
               <App />
           </BrowserRouter>
         </PersistGate>

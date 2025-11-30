@@ -3,6 +3,7 @@ import { withSlide } from "../../../HOC/withSlide";
 import { steganography } from "../../../assets";
 import Silde1tool from "./Silde1tool";
 import Typewriter from "../../../Component/Typewriter";
+import { styles } from "../../../style";
 
 const InformationHiding = () => { 
     return (
@@ -12,7 +13,7 @@ const InformationHiding = () => {
                     Context: Information Hiding
                 </h3>
                 
-                <div className="relative w-full max-w-md">
+                <div className="relative w-full">
                     <img 
                         src={steganography} 
                         alt="Steganography Diagram" 
@@ -37,12 +38,8 @@ const Question = () => {
     return (
         <div className="w-full h-full flex flex-col items-center justify-center">
             <Typewriter
-                text="There is no perfect algorithm, only perfect compromises"
+                text="The key point is achieving a dynamic balance among capacity, imperceptibility, and robustness."
                 delay={0}
-            />
-            <Typewriter
-                text="the key is achieving a dynamic balance among capacity, imperceptibility, and robustness."
-                delay={3}
             />
         </div>
     )
@@ -53,8 +50,8 @@ const Slide4withoutHOC: React.FC = () => {
     
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-white dark:bg-zinc-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-            <div className="max-w-7xl w-full flex flex-col h-[85%]">
+        <div className={styles.slideContainer}>
+            <div className={styles.slideContent}>
 
                 {showConnection === 1 ? (
                     <div className="w-full h-full relative rounded-xl shadow-2xl overflow-hidden">
