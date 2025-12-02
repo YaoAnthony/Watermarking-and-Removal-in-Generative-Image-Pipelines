@@ -1,10 +1,10 @@
 import React from "react";
 import { withSlide } from "../../../HOC/withSlide";
 
-import { styles } from "../../../style";
+import { styles, colors } from "../../../style";
 import { motion } from "motion/react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { papersByYearData, watermarkingApproachesData, chartPalette } from "./data";
+import { papersByYearData, watermarkingApproachesData } from "./data";
 
 const Slide6withOutHOC: React.FC = () => {
 
@@ -46,7 +46,7 @@ const Slide6withOutHOC: React.FC = () => {
                                     />
                                     <Bar dataKey="count" name="Papers">
                                         {papersByYearData.map((_, index) => (
-                                            <Cell key={`cell-${index}`} fill={chartPalette[index % chartPalette.length]} />
+                                            <Cell key={`cell-${index}`} fill={colors.chartPalette[index % colors.chartPalette.length]} />
                                         ))}
                                     </Bar>
                                 </BarChart>

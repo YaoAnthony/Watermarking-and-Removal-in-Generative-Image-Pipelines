@@ -51,7 +51,7 @@ const Visualizer: React.FC<VisualizerProps> = ({ state }) => {
           {Array.from({ length: gridCells }).map((_, idx) => (
              <div 
                key={idx} 
-               className="bg-indigo-400 rounded-[1px] transition-opacity duration-300"
+               className="bg-[#fc0202] rounded-[1px] transition-opacity duration-300"
                style={{ 
                  opacity: 0.2 + (c * 0.5), // Higher capacity = denser/stronger visual
                }}
@@ -95,17 +95,17 @@ const Visualizer: React.FC<VisualizerProps> = ({ state }) => {
 
       {/* Metrics Panel - Cleaner Look */}
       <div className="grid grid-cols-3 gap-4 mt-6">
-        <div className="text-center p-3 rounded-xl bg-blue-50/50 border border-blue-100">
-           <div className="text-blue-600 font-bold text-xl">{Math.round(state.robustness)}%</div>
-           <div className="text-blue-900/60 text-[10px] font-bold uppercase tracking-wider mt-1">Robustness</div>
+        <div className="text-center p-3 rounded-xl bg-[#5F6F52]/10 border border-[#5F6F52]/20">
+           <div className="text-[#5F6F52] font-bold text-xl">{Math.round(state.robustness)}%</div>
+           <div className="text-[#5F6F52]/60 text-[10px] font-bold uppercase tracking-wider mt-1">Robustness</div>
         </div>
-        <div className="text-center p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
-           <div className="text-emerald-600 font-bold text-xl">{Math.round(state.imperceptibility)}%</div>
-           <div className="text-emerald-900/60 text-[10px] font-bold uppercase tracking-wider mt-1">Imperceptibility</div>
+        <div className="text-center p-3 rounded-xl bg-[#8D9F87]/10 border border-[#8D9F87]/20">
+           <div className="text-[#8D9F87] font-bold text-xl">{Math.round(state.imperceptibility)}%</div>
+           <div className="text-[#8D9F87]/60 text-[10px] font-bold uppercase tracking-wider mt-1">Imperceptibility</div>
         </div>
-        <div className="text-center p-3 rounded-xl bg-purple-50/50 border border-purple-100">
-           <div className="text-purple-600 font-bold text-xl">{Math.round(state.capacity)}%</div>
-           <div className="text-purple-900/60 text-[10px] font-bold uppercase tracking-wider mt-1">Capacity</div>
+        <div className="text-center p-3 rounded-xl bg-[#A98467]/10 border border-[#A98467]/20">
+           <div className="text-[#A98467] font-bold text-xl">{Math.round(state.capacity)}%</div>
+           <div className="text-[#A98467]/60 text-[10px] font-bold uppercase tracking-wider mt-1">Capacity</div>
         </div>
       </div>
     </div>

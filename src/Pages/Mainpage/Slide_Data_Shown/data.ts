@@ -10,21 +10,11 @@ export const papersByYearData = [
   { year: '2025', count: 8 },
 ];
 
-// Japanese Tea / Wabi-sabi Palette
-export const chartPalette = [
-  '#8D9F87', // Matcha Green
-  '#C7B198', // Hojicha Beige
-  '#5F6F52', // Deep Tea Green
-  '#A98467', // Roasted Tea Brown
-  '#7E8D85', // Stone Grey
-  '#D6C0B3', // Sakura Muted
-  '#B4A596', // Sand
-  '#6B705C', // Olive
-  '#998475', // Clay
-];
+
 
 export const watermarkingApproachesData = [
-  { name: 'Model-Independent (Model-Tuned)', value: 71.4, color: '#8D9F87' }, // Matcha
+  { name: 'Model-Independent (Model-Tuned)', value: 29.14, color: '#8D9F87' }, // Matcha
   { name: 'Model-Agnostic (Tuning-Free)', value: 26.5, color: '#C7B198' },   // Beige
-  { name: 'Uncategorized', value: 2.0, color: '#A98467' },                   // Brown
+  { name: 'Deep watermarking', value: 41.17, color: '#B4A596' },   // Beige
+  { name: 'Other', value: 2.0, color: '#A98467' },                   // Brown
 ];

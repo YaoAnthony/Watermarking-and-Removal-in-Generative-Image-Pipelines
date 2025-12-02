@@ -21,34 +21,34 @@ export const EncoderStage: React.FC<EncoderStageProps> = ({ processing, residual
         <div className="relative z-10 flex items-center justify-between h-full px-2">
             {/* Input Conv */}
             <div className="flex flex-col items-center gap-1.5">
-                <div className="w-10 h-14 bg-white border-2 border-blue-200 rounded-lg shadow-sm flex items-center justify-center group-hover:border-blue-400 transition-colors">
-                    <Layers size={16} className="text-blue-500" />
+                <div className="w-10 h-14 bg-white border-2 border-[#8D9F87]/30 rounded-lg shadow-sm flex items-center justify-center group-hover:border-[#8D9F87] transition-colors">
+                    <Layers size={16} className="text-[#8D9F87]" />
                 </div>
                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Conv2D</span>
             </div>
             
             {/* Connection */}
             <div className="flex-1 h-[2px] bg-slate-200 mx-2 relative overflow-hidden">
-                {processing && <div className="absolute inset-0 bg-blue-400 animate-progress"></div>}
+                {processing && <div className="absolute inset-0 bg-[#5F6F52] animate-progress"></div>}
             </div>
 
             {/* Deep Block */}
             <div className="flex flex-col items-center gap-1.5">
-                <div className="w-10 h-10 bg-indigo-50 border-2 border-indigo-200 rounded-lg shadow-sm flex items-center justify-center">
-                    <Cpu size={16} className="text-indigo-500" />
+                <div className="w-10 h-10 bg-[#A98467]/10 border-2 border-[#A98467]/30 rounded-lg shadow-sm flex items-center justify-center">
+                    <Cpu size={16} className="text-[#A98467]" />
                 </div>
                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">ResNet</span>
             </div>
 
             {/* Connection */}
             <div className="flex-1 h-[2px] bg-slate-200 mx-2 relative overflow-hidden">
-                 {processing && <div className="absolute inset-0 bg-blue-400 animate-progress" style={{animationDelay: '0.2s'}}></div>}
+                 {processing && <div className="absolute inset-0 bg-[#5F6F52] animate-progress" style={{animationDelay: '0.2s'}}></div>}
             </div>
 
             {/* Output Conv */}
             <div className="flex flex-col items-center gap-1.5">
-                <div className="w-10 h-14 bg-white border-2 border-emerald-200 rounded-lg shadow-sm flex items-center justify-center group-hover:border-emerald-400 transition-colors">
-                     <Layers size={16} className="text-emerald-500" />
+                <div className="w-10 h-14 bg-white border-2 border-[#5F6F52]/30 rounded-lg shadow-sm flex items-center justify-center group-hover:border-[#5F6F52] transition-colors">
+                     <Layers size={16} className="text-[#5F6F52]" />
                 </div>
                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">ConvTr</span>
             </div>
@@ -76,7 +76,7 @@ export const EncoderStage: React.FC<EncoderStageProps> = ({ processing, residual
             <label className="text-xs font-bold text-slate-600 flex items-center gap-1.5 uppercase">
                 <Zap size={12} className="text-amber-500" /> Embedding Strength ($\alpha$)
             </label>
-            <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+            <span className="text-xs font-mono font-bold text-[#5F6F52] bg-[#5F6F52]/10 px-2 py-0.5 rounded border border-[#5F6F52]/20">
                 {strength.toFixed(1)}
             </span>
         </div>
@@ -87,7 +87,7 @@ export const EncoderStage: React.FC<EncoderStageProps> = ({ processing, residual
             step="0.1" 
             value={strength}
             onChange={(e) => setStrength(parseFloat(e.target.value))}
-            className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 hover:accent-blue-500"
+            className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#5F6F52] hover:accent-[#5F6F52]"
         />
         <div className="flex justify-between mt-1 text-[9px] text-slate-400 font-medium">
             <span>Invisible</span>

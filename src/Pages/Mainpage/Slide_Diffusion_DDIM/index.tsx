@@ -1,6 +1,7 @@
 
 import { withSlide } from "../../../HOC/withSlide";
 
+import DDIMComponent  from "./components/DDIM";   
 
 const DDIMWithoutHOC: React.FC = () => {
     return (
@@ -10,15 +11,13 @@ const DDIMWithoutHOC: React.FC = () => {
                 {/* Header */}
                 <div className="mb-12">
                     <h2 className="font-grotesk text-5xl font-bold mb-4 text-left text-black dark:text-white">
-                        DDIM
+                        DDIM watermarking
                     </h2>
                     <div className="w-20 h-1 bg-blue-700 dark:bg-blue-500" />
                 </div>
                 
             </div>
-            <div>
-                开始讲DDIM下，大家吧水印放在哪里
-            </div>
+            <DDIMComponent />
         </div>
     );
 };  

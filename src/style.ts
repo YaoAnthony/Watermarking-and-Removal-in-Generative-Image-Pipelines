@@ -45,6 +45,17 @@ const colors = {
         glow: "shadow-glow",
         glass: "shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] dark:shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]",
     },
+    chartPalette: [
+        '#8D9F87', // Matcha Green
+        '#C7B198', // Hojicha Beige
+        '#5F6F52', // Deep Tea Green
+        '#A98467', // Roasted Tea Brown
+        '#7E8D85', // Stone Grey
+        '#D6C0B3', // Sakura Muted
+        '#B4A596', // Sand
+        '#6B705C', // Olive
+        '#998475', // Clay
+    ]
 };
 
 const styles = {

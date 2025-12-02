@@ -34,7 +34,7 @@ export function withSlide(SlideComponent: React.FC) {
     const progressText = theme === "light" ? "text-gray-700/80" : "text-white/80";
 
     return (
-      <div className="relative w-screen h-screen overflow-hidden bg-white dark:bg-zinc-900">
+      <div className="relative w-screen h-screen  bg-white dark:bg-zinc-900">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}

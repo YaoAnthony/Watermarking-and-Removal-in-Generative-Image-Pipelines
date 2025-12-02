@@ -6,18 +6,13 @@ import { motion } from "motion/react";
 // icons
 import { MenuOutlined } from "@ant-design/icons";
 
-
-// style
-import { styles } from "../../../style";
-
-
 // components
 import DarkLightSwitch from "../../DarkLightSwitch";
 
 const DeskTopNav = () => {
 
   return (
-    <nav className={`hidden md:flex w-full items-center justify-end ${styles.paddingX}`}>
+    <nav className={`hidden md:flex w-full items-center justify-end px-12`}>
 
 
 

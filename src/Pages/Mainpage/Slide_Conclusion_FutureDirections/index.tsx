@@ -11,7 +11,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
                     <h2 className="font-grotesk text-4xl font-bold mb-3 text-left text-black dark:text-white tracking-tight">
                         Summary of Findings: <span className="text-gray-500 dark:text-gray-400 font-normal">From Taxonomy to Weaknesses</span>
                     </h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 rounded-full" />
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-[#5F6F52] via-[#8D9F87] to-[#A98467] rounded-full" />
                 </div>
                 
 
@@ -19,7 +19,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
             <div className="flex-1 overflow-y-auto">
                 <ul className="space-y-8 pl-4">
                     <li className="flex items-start gap-4">
-                        <div className="mt-2 w-3 h-3 rounded-full bg-blue-600 shrink-0" />
+                        <div className="mt-2 w-3 h-3 rounded-full bg-[#5F6F52] shrink-0" />
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                                 Regeneration-Robust Watermarks
@@ -31,7 +31,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
                     </li>
 
                     <li className="flex items-start gap-4">
-                        <div className="mt-2 w-3 h-3 rounded-full bg-purple-600 shrink-0" />
+                        <div className="mt-2 w-3 h-3 rounded-full bg-[#8D9F87] shrink-0" />
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                                 Lifecycle-Aware Model Watermarks
@@ -43,7 +43,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
                     </li>
 
                     <li className="flex items-start gap-4">
-                        <div className="mt-2 w-3 h-3 rounded-full bg-red-600 shrink-0" />
+                        <div className="mt-2 w-3 h-3 rounded-full bg-[#A98467] shrink-0" />
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                                 Security and Removal-Resistance
@@ -55,7 +55,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
                     </li>
 
                     <li className="flex items-start gap-4">
-                        <div className="mt-2 w-3 h-3 rounded-full bg-green-600 shrink-0" />
+                        <div className="mt-2 w-3 h-3 rounded-full bg-[#6B705C] shrink-0" />
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                                 Safe and Non-Backdoor Designs
@@ -67,7 +67,7 @@ const ConclusionFutureDirectionsWithoutHOC: React.FC = () => {
                     </li>
 
                     <li className="flex items-start gap-4">
-                        <div className="mt-2 w-3 h-3 rounded-full bg-orange-600 shrink-0" />
+                        <div className="mt-2 w-3 h-3 rounded-full bg-[#C7B198] shrink-0" />
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                                 Standardized Benchmarks for Diffusion Watermarking

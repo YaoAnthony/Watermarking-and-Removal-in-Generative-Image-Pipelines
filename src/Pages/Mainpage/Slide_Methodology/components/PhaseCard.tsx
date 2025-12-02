@@ -12,7 +12,7 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({ phase, isLast }) => {
     <div className="flex flex-col h-full relative group">
       {/* Header */}
       <div className="mb-6 relative">
-        <div className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-1">
+        <div className="text-[#5F6F52] font-bold text-sm tracking-widest uppercase mb-1">
           Phase 0{phase.id}
         </div>
         <h3 className="text-xl font-bold text-slate-900 leading-tight">
@@ -24,7 +24,7 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({ phase, isLast }) => {
       {/* Content Container */}
       <div className="flex-1 bg-slate-50 border border-slate-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden">
         {/* Decorative Top Line */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#5F6F52] to-[#8D9F87] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
         <div className="space-y-6">
           {phase.items.map((item, idx) => (
@@ -35,7 +35,7 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({ phase, isLast }) => {
                 </div>
               )}
               
-              <div className={`p-3 rounded-lg ${item.highlight ? 'bg-white border border-blue-100 shadow-sm' : ''}`}>
+              <div className={`p-3 rounded-lg ${item.highlight ? 'bg-white border border-[#8D9F87]/30 shadow-sm' : ''}`}>
                 <div className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">
                   {item.label}
                 </div>
@@ -44,7 +44,7 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({ phase, isLast }) => {
                    {item.subValue ? (
                      <div className="flex items-center gap-2 font-mono">
                         <span className="text-slate-400 line-through text-sm">{item.value}</span>
-                        <ArrowRight size={14} className="text-blue-500" />
+                        <ArrowRight size={14} className="text-[#5F6F52]" />
                         <span className="text-lg font-bold text-slate-900">{item.subValue}</span>
                      </div>
                    ) : (

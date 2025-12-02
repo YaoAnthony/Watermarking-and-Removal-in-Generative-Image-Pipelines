@@ -21,21 +21,21 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ state }) => {
     robustness: {
       title: "Focus: Robustness",
       subtitle: "The Shield",
-      color: "text-blue-600",
+      color: "text-[#5F6F52]",
       desc: "Robustness is the watermark's ability to survive attacks. High robustness is critical for copyright protection where adversaries may try to remove the mark via compression, cropping, or filtering.",
       tradeoff: "High robustness often requires stronger signal modifications, which can reduce imperceptibility or limit the amount of data (capacity) available.",
     },
     imperceptibility: {
       title: "Focus: Imperceptibility",
       subtitle: "The Ghost",
-      color: "text-emerald-600",
+      color: "text-[#8D9F87]",
       desc: "Imperceptibility (Fidelity) ensures the media looks or sounds identical to the original. The distortion should be invisible to human senses.",
       tradeoff: "To be truly invisible, the watermark signal must be weak. This makes it vulnerable to attacks (low robustness) and limits the data space (low capacity).",
     },
     capacity: {
       title: "Focus: Embedded Capacity",
       subtitle: "The Payload",
-      color: "text-purple-600",
+      color: "text-[#A98467]",
       desc: "Capacity is the volume of information (bits) hidden within the media. High capacity is essential for detailed metadata, subtitles, or transaction IDs.",
       tradeoff: "Hiding more bits requires changing more pixels/samples. This increases the risk of visible artifacts (low imperceptibility) and makes the signal harder to defend (low robustness).",
     }

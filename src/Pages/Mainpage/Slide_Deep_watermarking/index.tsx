@@ -22,57 +22,59 @@ const Deep_watermarkingWithoutHOC: React.FC = () => {
     };
 
     const cnnData: NetworkDetailData = {
-        title: "CNN Encoder-Decoder (Pixel-domain)",
-        representatives: [
-            "HiDDeN", "Distortion-agnostic DW", "TrustMark", "StegaStamp", "EditGuard", "UDH", "CIN (Partially)"
-        ],
-        pros: [
-            "结构简单、易实现、推理快；",
-            "Convolution 适合建模局部纹理 → 嵌入残差 + 抗局部噪声；",
-            "很多工作已经形成“标准模板”（U-Net + skip, ResNet blocks）。"
-        ],
-        cons: [
-            "对全局语义变化适应性有限（比如强编辑、风格大变）；",
-            "分辨率泛化常常要靠插值 / patch-based；",
-            "有时容易 overfit to training attacks，对完全 unseen attack 仍然脆弱。"
-        ]
-    };
+    title: "CNN Encoder-Decoder (Pixel-domain)",
+    representatives: [
+        "HiDDeN", "Distortion-agnostic DW", "TrustMark", "StegaStamp", "EditGuard", "UDH", "CIN (Partially)"
+    ],
+    pros: [
+        "Simple structure, easy to implement, fast inference.",
+        "Convolutions model local textures well → good for embedding residuals and resisting local noise.",
+        "Many works follow a common 'standard template' (U-Net + skip connections, ResNet blocks)."
+    ],
+    cons: [
+        "Limited ability to handle large semantic changes (e.g., strong edits, major style shifts).",
+        "Resolution generalization often depends on interpolation or patch-based approaches.",
+        "May overfit to known attacks and remain fragile to unseen distortions."
+    ]
+};
 
-    const ganData: NetworkDetailData = {
-        title: "GAN-style Networks",
-        representatives: [
-            "Distortion-agnostic DW (Attack CNN)", "DiffusionShield (Deep Decoder + Robustness Regularization)", "Zhu's Adversarial-example Watermark"
-        ],
-        pros: [
-            "GAN / 对抗训练可以逼迫 encoded image 非常“自然”，难以被视觉和统计方法区分；",
-            "攻击网络可以自适应学“最坏失真”，让 encoder–decoder 对未知失真更 robust。"
-        ],
-        cons: [
-            "训练不稳定，复现难；",
-            "模型复杂度高，调参成本大（尤其在大尺寸图像上）；",
-            "不易理论分析其安全性（可能存在 adversarial removal）。"
-        ]
-    };
+// GAN-style Networks
+const ganData: NetworkDetailData = {
+    title: "GAN-style Networks",
+    representatives: [
+        "Distortion-agnostic DW (Attack CNN)", "DiffusionShield (Deep Decoder + Robustness Regularization)", "Zhu's Adversarial-example Watermark"
+    ],
+    pros: [
+        "GAN / adversarial training makes the encoded image look very natural, hard to detect visually or statistically.",
+        "Attack networks learn worst-case distortions, improving robustness against unknown attacks."
+    ],
+    cons: [
+        "Training is unstable and hard to reproduce.",
+        "High model complexity with heavy tuning cost (especially for high-resolution images).",
+        "Difficult to analyze security theoretically (vulnerable to adversarial removal)."
+    ]
+};
 
-    const dnnData: NetworkDetailData = {
-        title: "DNN  (Model IP Protection)",
-        representatives: [
-            "Margin-based (Classification Boundary)", "Trigger-set / Backdoor-style", "Parameter-space (Weights, BN, Low-rank)", "Structure-based (Lottery-ticket, Sparse Mask)"
-        ],
-        pros: [
-            "直接保护的是模型本身，而不是某一批图像；",
-            "可以支持黑盒验证：触发集 watermark 只需通过 query 输出即可验证；",
-            "能和普通训练流程结合，兼容现有 CNN / Transformer 架构；",
-            "一旦设计好方案，与具体数据内容无关（同一机制可用于不同任务）。"
-        ],
-        cons: [
-            "对模型修改非常敏感（Fine-tuning, Pruning, Quantization）；",
-            "Backdoor-style watermark 本质上就是后门，和安全需求存在冲突；",
-            "证据是统计型的，在法律/取证上是否足够有说服力仍存在争议；",
-            "容易遭遇 overwriting attack（多重所有权主张）；",
-            "缺乏真实工业流水线下的长期可用性系统评估。"
-        ]
-    };
+const dnnData: NetworkDetailData = {
+    title: "DNN (Model IP Protection)",
+    representatives: [
+        "Margin-based (Classification Boundary)", "Trigger-set / Backdoor-style", "Parameter-space (Weights, BN, Low-rank)", "Structure-based (Lottery-ticket, Sparse Mask)"
+    ],
+    pros: [
+        "Protects the model itself rather than a specific set of images.",
+        "Supports black-box verification: trigger-set watermarks can be checked through model outputs.",
+        "Compatible with standard training pipelines and common CNN / Transformer architectures.",
+        "Once designed, the same mechanism works across different datasets or tasks."
+    ],
+    cons: [
+        "Very sensitive to model modifications (fine-tuning, pruning, quantization).",
+        "Backdoor-style methods are essentially backdoors, conflicting with security goals.",
+        "Evidence is statistical, raising concerns about legal reliability.",
+        "Vulnerable to overwriting attacks (multiple ownership claims).",
+        "Lacks long-term evaluation in real industrial environments."
+    ]
+};
+
 
     return (
         <div className="w-full h-full flex flex-col items-center justify-start bg-white dark:bg-zinc-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">

@@ -87,10 +87,31 @@ const Slide4withoutHOC: React.FC = () => {
                                         "The process of embedding information into a digital signal (audio, video, or image) in a way that is difficult to remove and can be used for copyright protection or integrity verification."
                                     </p>
                                 </div>
-
                                 {/* Key Characteristics */}
                                 <div>
-                                    <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                                    <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                                        <span className="w-2 h-8 bg-gray-800 dark:bg-gray-200 rounded-sm"></span>
+                                        Purpose
+                                    </h3>
+                                    <div className="space-y-4">
+                                        <div className="group">
+                                            <div className="flex items-baseline gap-3 mb-1">
+                                                <span className="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
+                                                <h4 className="text-xl  text-gray-900 dark:text-white">Protect Copyright</h4>
+                                            </div>
+                                        </div>
+
+                                        <div className="group">
+                                            <div className="flex items-baseline gap-3 mb-1">
+                                                <span className="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
+                                                <h4 className="text-xl  text-gray-900 dark:text-white">Protect against Unauthorized Style Replication</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Key Characteristics */}
+                                <div>
+                                    <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
                                         <span className="w-2 h-8 bg-gray-800 dark:bg-gray-200 rounded-sm"></span>
                                         Key Characteristics
                                     </h3>

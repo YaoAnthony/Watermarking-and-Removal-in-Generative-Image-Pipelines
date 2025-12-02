@@ -10,8 +10,8 @@ interface DecoderStageProps {
 
 export const DecoderStage: React.FC<DecoderStageProps> = ({ recoveredPayload, ber, confidence }) => {
   const data = [
-    { name: 'BER', value: ber, color: ber > 15 ? '#ef4444' : '#22c55e' },
-    { name: 'Conf', value: confidence, color: confidence > 80 ? '#22c55e' : '#f59e0b' },
+    { name: 'BER', value: ber, color: ber > 15 ? '#A98467' : '#5F6F52' },
+    { name: 'Conf', value: confidence, color: confidence > 80 ? '#5F6F52' : '#C7B198' },
   ];
 
   return (
@@ -20,7 +20,7 @@ export const DecoderStage: React.FC<DecoderStageProps> = ({ recoveredPayload, be
         <div className="flex items-center justify-center space-x-2 mb-4 opacity-70">
             <div className="w-6 h-6 border border-slate-300 rounded bg-slate-50 text-[8px] flex items-center justify-center">In</div>
             <div className="text-slate-300">→</div>
-            <div className="w-6 h-6 border border-blue-300 rounded bg-blue-50 text-[8px] flex items-center justify-center text-blue-600">D</div>
+            <div className="w-6 h-6 border border-[#E6E4DC] rounded bg-[#FDFCF8] text-[8px] flex items-center justify-center text-[#5F6F52]">D</div>
             <div className="text-slate-300">→</div>
             <div className="w-6 h-6 border border-green-300 rounded bg-green-50 text-[8px] flex items-center justify-center text-green-600">Out</div>
         </div>
@@ -45,7 +45,7 @@ export const DecoderStage: React.FC<DecoderStageProps> = ({ recoveredPayload, be
             </div>
             <div className="bg-slate-900 rounded-lg p-3 text-center text-white">
                 <div className="text-[9px] text-slate-400 uppercase mb-1">Confidence</div>
-                <div className="text-xl font-bold text-blue-400">
+                <div className="text-xl font-bold text-[#5F6F52]">
                     {confidence}%
                 </div>
             </div>

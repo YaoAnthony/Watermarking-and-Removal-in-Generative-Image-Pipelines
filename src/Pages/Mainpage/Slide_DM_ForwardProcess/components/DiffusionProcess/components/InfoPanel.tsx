@@ -26,7 +26,7 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ schedule, currentStep, mod
   return (
     <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 h-full flex flex-col">
       <div className="flex items-center space-x-2 mb-6">
-        <Microscope className="w-5 h-5 text-cyan-400" />
+        <Microscope className="w-5 h-5 text-[#8D9F87]" />
         <h2 className="text-xl font-bold text-white">Theory & Mechanics</h2>
       </div>
 
@@ -37,11 +37,11 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ schedule, currentStep, mod
            <div className="font-mono text-center text-lg md:text-xl py-2 overflow-x-auto whitespace-nowrap">
              {mode === 'forward' ? (
                 <span>
-                  <span className="text-cyan-400">x_t</span> = <span className="text-purple-400">√ᾱ</span>·x₀ + <span className="text-pink-400">√(1-ᾱ)</span>·ε
+                  <span className="text-[#8D9F87]">x_t</span> = <span className="text-[#5F6F52]">√ᾱ</span>·x₀ + <span className="text-[#A98467]">√(1-ᾱ)</span>·ε
                 </span>
              ) : (
                 <span>
-                  x_{'{t-1}'} ← <span className="text-cyan-400">Model</span>(x_t, t)
+                  x_{'{t-1}'} ← <span className="text-[#8D9F87]">Model</span>(x_t, t)
                 </span>
              )}
            </div>
@@ -56,13 +56,13 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ schedule, currentStep, mod
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-slate-800 p-3 rounded-lg border border-slate-700">
              <div className="text-xs text-slate-400">Signal Strength (√ᾱ)</div>
-             <div className="text-2xl font-mono text-cyan-400 mt-1">
+             <div className="text-2xl font-mono text-[#5F6F52] mt-1">
                {Math.sqrt(currentData.alphaBar).toFixed(3)}
              </div>
           </div>
           <div className="bg-slate-800 p-3 rounded-lg border border-slate-700">
              <div className="text-xs text-slate-400">Noise Strength (√(1-ᾱ))</div>
-             <div className="text-2xl font-mono text-pink-400 mt-1">
+             <div className="text-2xl font-mono text-[#A98467] mt-1">
                {currentData.noiseLevel.toFixed(3)}
              </div>
           </div>
